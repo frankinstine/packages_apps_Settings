@@ -98,6 +98,9 @@
     <!-- ROM control -->
     <string name="rom_control_title">ROM control</string>
 
+    <!-- Terminal Emulator -->
+    <string name="terminal_emulator_settings_title">Terminal Emulator</string>
+
     <!-- Themes Settings -->
     <!-- Settings main menu entry -->
     <string name="themes_settings_title">Themes</string>
@@ -147,8 +150,5 @@
     <string name="volume_steps_ring_title">Volume steps: Ringer</string>
     <string name="volume_steps_system_title">Volume steps: System</string>
     <string name="volume_steps_voice_call_title">Volume steps: Voice Call</string>
-
-    <!-- Bluetooth accept all Filestypes -->
-    <string name="bluetooth_accept_all_files">Accept all file types</string>
 
 </resources>

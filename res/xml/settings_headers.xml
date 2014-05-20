@@ -88,6 +88,15 @@
                 android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
     </header>
 
+    <!-- Terminal Emulator -->
+    <header android:icon="@drawable/ic_settings_terminal_emulator"
+            android:title="@string/terminal_emulator_settings_title">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="jackpal.androidterm.Term"
+                android:targetPackage="jackpal.androidterm" />
+    </header>
+
     <!-- Themes -->
     <header
         android:id="@+id/theme_settings"
