@@ -34,6 +34,7 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import android.net.Uri;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -47,6 +48,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     private static final String FILENAME_PROC_CPUINFO = "/proc/cpuinfo";
 
     private static final String KEY_CONTAINER = "container";
+    private static final String KEY_BS_DONATE= "donate";
     private static final String KEY_TEAM = "team";
     private static final String KEY_CONTRIBUTORS = "contributors";
     private static final String KEY_REGULATORY_INFO = "regulatory_info";
@@ -162,6 +164,8 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         // Remove regulatory information if not enabled.
         removePreferenceIfBoolFalse(KEY_REGULATORY_INFO,
                 R.bool.config_show_regulatory_info);
+
+	getPreferenceScreen().findPreference(KEY_BS_DONATE).setWidgetLayoutResource(R.layout.donate);
     }
 
     @Override
@@ -196,6 +200,10 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         } else if (prefKey.equals(KEY_KERNEL_VERSION)) {
             setStringSummary(KEY_KERNEL_VERSION, getKernelVersion());
             return true;
+	} else if (preference.getKey().equals(KEY_BS_DONATE)) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(getActivity().getString(R.string.donate_link)));
+            startActivity(browserIntent);
         } else if (preference.getKey().equals(KEY_SELINUX_STATUS)) {
             System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
             mHits[mHits.length-1] = SystemClock.uptimeMillis();

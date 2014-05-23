@@ -4899,4 +4899,10 @@
 
     <!-- Text to display in regulatory info screen (from device overlay). -->
     <string name="regulatory_info_text"></string>
+
+    <!-- Donate to Frankinstine's AOKP Builds -->
+    <string name="donate_frankinstine_title">Support Frankinstine AOKP Builds</string>
+    <string name="donate_frankinstine_summary">Donate to Frankinstine Roms.</string>
+    <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=97D4Z78MR9VWE</string>
+
 </resources>
